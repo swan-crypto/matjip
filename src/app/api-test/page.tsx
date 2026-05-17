@@ -100,8 +100,8 @@ export default function ApiTestPage() {
   }
 
   const items: { title: string; addr1: string; tel: string }[] =
-    (result as { response?: { body?: { items?: { item?: unknown[] } } } })
-      ?.response?.body?.items?.item ?? [];
+    ((result as { response?: { body?: { items?: { item?: { title: string; addr1: string; tel: string }[] } } } })
+      ?.response?.body?.items?.item ?? []);
   const totalCount: number =
     (result as { response?: { body?: { totalCount?: number } } })
       ?.response?.body?.totalCount ?? 0;
